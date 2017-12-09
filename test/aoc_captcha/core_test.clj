@@ -6,6 +6,12 @@
   (testing "stuff"
     (is (= (captcha-count "11") 2))
     (is (= (captcha-count "111") 3))
-    (is (= (captcha-count "1111") 4))
+    (is (= (captcha-count "1111") 4))))
 
-    ))
+(deftest char->digit-test
+  (is (= (char->digit \0) 0))
+  (is (= (char->digit \1) 1))
+  (is (= (char->digit \3) 3))
+  (is (= (char->digit \5) 5))
+  (is (= (char->digit \7) 7))
+  (is (= (char->digit \9) 9)))

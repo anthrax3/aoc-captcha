@@ -2,5 +2,8 @@
 
 (defn captcha-count [captcha] (count captcha))  
 
+(defn char->digit [char] (Integer/parseInt (str char)))
+
+
 
 
