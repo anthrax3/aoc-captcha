@@ -3,5 +3,9 @@
             [aoc-captcha.core :refer :all]))
 
 (deftest captcha-count-test
-  "stuff"
-    (is (= (captcha-count "11") 2)))
+  (testing "stuff"
+    (is (= (captcha-count "11") 2))
+    (is (= (captcha-count "111") 3))
+    (is (= (captcha-count "1111") 4))
+
+    ))

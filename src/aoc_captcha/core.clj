@@ -1,3 +1,6 @@
 (ns aoc-captcha.core)
 
-(defn captcha-count [captcha] 2)  
+(defn captcha-count [captcha] (count captcha))  
+
+
+
