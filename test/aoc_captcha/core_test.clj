@@ -25,6 +25,13 @@
   (is (not (ends-match? '(1 2))))
   (is (not (ends-match? '(7 5 6 1 3 8 9)))))
 
+(deftest captcha-count-pair-test
+  (is (= (captcha-count-pair '(1 1)) 1))
+  (is (= (captcha-count-pair '(2 2)) 2))
+  (is (= (captcha-count-pair '(1 2 1)) 0))
+  (is (= (captcha-count-pair '(1 3)) 0))
+  (is (= (captcha-count-pair '(1 2 1 )) 0)))
+
 (deftest captcha-count-to-end-test
   (is (= (captcha-count-to-end "1122") 3))
   (is (= (captcha-count-to-end "11122") 4))

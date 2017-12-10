@@ -10,15 +10,18 @@
 
 (defn ends-match? [list] (= (first list) (last list)))
 
+
+(defn captcha-count-pair [list]
+  (if (first-two-match? list)
+    (first list)
+    0))
+
 (defn captcha-count-to-end [captcha-str]
   (loop [captcha-list (str->digit-list captcha-str)
          result 0]
     (if (<= 2 (count captcha-list))
       (recur (rest captcha-list)
-             (+ result
-                (if (first-two-match? captcha-list)
-                  (first captcha-list)
-                  0)))
+             (+ result (captcha-count-pair captcha-list)))
       result)))
 
 (defn captcha-count-last-element [captcha-str]
