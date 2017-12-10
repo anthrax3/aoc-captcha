@@ -11,6 +11,14 @@
                   0)))
       result)))
 
+(defn captcha-count-last-element [captcha]
+  (let [captcha (str->digit-list captcha)]
+  (if (ends-match? captcha)
+    (last captcha)
+    0)))
+
+(defn ends-match? [list] (= (first list) (last list)))
+
 (defn char->digit [char] (Integer/parseInt (str char)))
 
 (defn str->digit-list [str] (map char->digit (seq str)))

@@ -3,9 +3,22 @@
             [aoc-captcha.core :refer :all]))
 
 (deftest captcha-count-to-end-test
-    (is (= (captcha-count-to-end "1122") 3))
-    (is (= (captcha-count-to-end "11122") 4))
-    (is (= (captcha-count-to-end "112233") 6)))
+  (is (= (captcha-count-to-end "1122") 3))
+  (is (= (captcha-count-to-end "11122") 4))
+  (is (= (captcha-count-to-end "112233") 6)))
+
+(deftest captcha-count-last-element-test
+  (is (= (captcha-count-last-element "11") 1))
+  (is (= (captcha-count-last-element "121") 1))
+  (is (= (captcha-count-last-element "77") 7))
+  (is (= (captcha-count-last-element "777") 7)))
+
+(deftest ends-match?-test
+  (is (ends-match? '(1 1)))
+  (is (ends-match? '(1 2 1)))
+  (is (ends-match? '(1 3 5 2 1)))
+  (is (not (ends-match? '(1 2))))
+  (is (not (ends-match? '(7 5 6 1 3 8 9)))))
 
 (deftest char->digit-test
   (is (= (char->digit \0) 0))
