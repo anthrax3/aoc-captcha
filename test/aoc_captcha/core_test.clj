@@ -2,11 +2,10 @@
   (:require [clojure.test :refer :all]
             [aoc-captcha.core :refer :all]))
 
-(deftest captcha-count-test
-  (testing "stuff"
-    (is (= (captcha-count "11") 2))
-    (is (= (captcha-count "111") 3))
-    (is (= (captcha-count "1111") 4))))
+(deftest captcha-count-to-end-test
+    (is (= (captcha-count-to-end "1122") 3))
+    (is (= (captcha-count-to-end "11122") 4))
+    (is (= (captcha-count-to-end "112233") 6)))
 
 (deftest char->digit-test
   (is (= (char->digit \0) 0))
@@ -19,3 +18,7 @@
 (deftest str->digit-list-test
   (is (= (str->digit-list "1234") '(1 2 3 4)))
   (is (= (str->digit-list "112233") '(1 1 2 2 3 3))))
+
+(deftest first-two-digits-eq?-test
+  (is (first-two-digits-eq? '(1 1)))
+  (is (not (first-two-digits-eq? '(1 2)))))
