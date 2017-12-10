@@ -1,14 +1,5 @@
 # aoc-captcha
 
-A Clojure library designed to ... well, that part is up to you.
+Captcha solver for Advent Of Code 2017, Puzzle #1
 
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2017 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Used this as sandbox for learning Emacs CIDER, so my commit history is a little off. Head of master solves the captcha though and I'll never use this again so whatever.
