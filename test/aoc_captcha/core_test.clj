@@ -19,6 +19,6 @@
   (is (= (str->digit-list "1234") '(1 2 3 4)))
   (is (= (str->digit-list "112233") '(1 1 2 2 3 3))))
 
-(deftest first-two-digits-eq?-test
+(deftest first-two-match?-test
   (is (first-two-digits-eq? '(1 1)))
   (is (not (first-two-digits-eq? '(1 2)))))

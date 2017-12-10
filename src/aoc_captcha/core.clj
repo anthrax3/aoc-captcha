@@ -15,5 +15,5 @@
 
 (defn str->digit-list [str] (map char->digit (seq str)))
 
-(defn first-two-digits-eq? [list] (= (first list)
+(defn first-two-match? [list] (= (first list)
                                      (first (rest list))))
