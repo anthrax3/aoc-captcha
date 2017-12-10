@@ -15,3 +15,7 @@
   (is (= (char->digit \5) 5))
   (is (= (char->digit \7) 7))
   (is (= (char->digit \9) 9)))
+
+(deftest str->digit-list-test
+  (is (= (str->digit-list "1234") '(1 2 3 4)))
+  (is (= (str->digit-list "112233") '(1 1 2 2 3 3))))
