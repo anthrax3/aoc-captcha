@@ -60,3 +60,9 @@
   (is (= (rotate-list-left '(1 2 3)) '(2 3 1)))
   (is (= (rotate-list-left '(5 9 0 1 2)) '(9 0 1 2 5)))
   (is (= (rotate-list-left '(42)) '(42))))
+
+(deftest n-ahead-matches?-test
+  (is (n-ahead-matches? '(1 1) 1))
+  (is (n-ahead-matches? '(1 2 1) 2))
+  (is (n-ahead-matches? '(1 2 3 4 5 1) 5))
+  (is (not (n-ahead-matches? '(1 2 1) 1))))

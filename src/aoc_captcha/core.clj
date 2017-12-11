@@ -6,10 +6,9 @@
 (defn str->digit-list [str] (map char->digit (seq str)))
 
 (defn first-two-match? [list] (= (first list)
-                                     (first (rest list))))
+                                 (first (rest list))))
 
 (defn ends-match? [list] (= (first list) (last list)))
-
 
 (defn captcha-count-pair [list]
   (if (first-two-match? list)
@@ -39,3 +38,11 @@
    (rest l)
    (list (first l))))
 
+(defn n-ahead-matches? [list n]
+  (= (first list)
+     (first
+      (loop [n n
+             list list]
+        (if (< 0 n)
+          (recur (dec n) (rotate-list-left list))
+          list)))))
