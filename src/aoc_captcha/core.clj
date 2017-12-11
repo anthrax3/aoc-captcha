@@ -33,3 +33,9 @@
 (defn captcha-solve [captcha-str]
   (+ (captcha-count-to-end captcha-str)
      (captcha-count-last-element captcha-str)))
+
+(defn rotate-list-left [l]
+  (concat
+   (rest l)
+   (list (first l))))
+
